@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     // Adjust these two constants for your actual repo info:
-    const GITHUB_USERNAME = "<username>";       // <= Palitan mo
-    const GITHUB_REPO = "<repo_name>";         // <= Palitan mo
+    const GITHUB_USERNAME = "rhettrina";       // <= Palitan mo
+    const GITHUB_REPO = "formylovecristalyn";         // <= Palitan mo
     const GITHUB_FOLDER = "images";            // folder ng images
   
     // Endpoint example:
