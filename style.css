@@ -89,12 +89,13 @@ body {
     background-color: #ffe9f1;
 }
 
-/* GALLERY SECTION */
 .gallery {
     min-height: 100vh;
     padding: 2rem 1rem;
-    background-color: #ffffff;
     text-align: center;
+    background: linear-gradient(45deg, #ffdde1, #c8fff4, #ffd1ff);
+    background-size: 600% 600%;
+    animation: gradientGallery 15s ease infinite;
 }
 
 .gallery h2 {
@@ -125,11 +126,10 @@ body {
     cursor: pointer;
     border: 2px solid #ff8ba7;
     background-color: #ffe3ed;
-    transition: transform 0.4s;
-}
-
-.photo-box:hover {
-    transform: scale(1.03);
+    transition: transform 0.4s, box-shadow 0.4s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .photo-box img {
@@ -137,8 +137,16 @@ body {
     height: auto;
     display: block;
     object-fit: cover;
-    /* preserve aspect ratio */
 }
+
+
+
+.photo-box:hover {
+    transform: scale(1.06) rotate(1deg);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.24);
+}
+
+
 
 /* LIGHTBOX */
 .lightbox {
@@ -225,4 +233,69 @@ body {
     .hero-content p {
         font-size: 1rem;
     }
+}
+
+@keyframes gradientGallery {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Mga lumulutang na puso (falling hearts) */
+.hearts {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    /* Para di maapektuhan ang paghahanap ng user sa UI */
+    overflow: hidden;
+    z-index: 3;
+    /* Mas mataas kaysa gradient background, pero mas mababa kaysa hero-content */
+}
+
+.heart {
+    position: absolute;
+    animation: fall 10s linear infinite;
+    opacity: 0.8;
+    font-size: 30px;
+    /* laki ng puso */
+    color: #ff5c8a;
+}
+
+/* Pag-ikot at pagbagsak ng hearts */
+@keyframes fall {
+    0% {
+        transform: translateY(-100px) rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(180deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(120vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    max-width: 600px;
+    padding: 20px;
+    animation: fadeDown 1.2s ease-in-out;
+    transform-style: preserve-3d;
+    will-change: transform;
 }

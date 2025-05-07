@@ -96,4 +96,44 @@ document.addEventListener('DOMContentLoaded', () => {
       return array;
     }
   });
+
+
+  function createHeart() {
+    const heartsContainer = document.getElementById('heartsContainer');
+    const heart = document.createElement('div');
+    heart.classList.add('heart');
+    heart.textContent = '❤';
   
+    // Random na position sa x-axis
+    heart.style.left = Math.random() * 100 + 'vw';
+    // Random na laki
+    heart.style.fontSize = (Math.floor(Math.random() * 20) + 20) + 'px';
+    // Random na delay
+    heart.style.animationDelay = Math.random() + 's';
+  
+    heartsContainer.appendChild(heart);
+  
+    // Tanggalin ang puso kapag tapos na ang animation
+    setTimeout(() => {
+      heart.remove();
+    }, 10000); // kasabay ng animation duration
+  }
+  
+  // Gumawa ng puso kada 0.6 second (halimbawa lang)
+  setInterval(createHeart, 600);
+  
+  
+  const heroContent = document.querySelector('.hero-content');
+heroContent.addEventListener('mousemove', (e) => {
+  const { offsetWidth, offsetHeight } = heroContent;
+  const xPos = e.offsetX;
+  const yPos = e.offsetY;
+  // Paikutin nang kaunti based sa mouse position
+  const rotateX = ((yPos / offsetHeight) - 0.5) * 8; 
+  const rotateY = ((xPos / offsetWidth) - 0.5) * -8;
+
+  heroContent.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+});
+heroContent.addEventListener('mouseleave', () => {
+  heroContent.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)';
+});
