@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Auto-List Images from GitHub</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <!-- AUDIO -->
+    <audio id="bgMusic" src="music/background.mp3"></audio>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="gradient-bg"></div>
+        <div class="hero-content">
+            <h1>Mahal Kita</h1>
+            <p>Walang rename-rename, automatic na ililista ang images!</p>
+            <button id="scrollDownBtn">View Our Photos</button>
+        </div>
+    </section>
+
+    <!-- GALLERY SECTION -->
+    <section class="gallery" id="gallerySection">
+        <h2>Our Memories</h2>
+        <div class="photos-container" id="photosContainer">
+            <!-- Images loaded via GitHub API -->
+        </div>
+    </section>
+
+    <!-- LIGHTBOX OVERLAY -->
+    <div class="lightbox" id="lightbox">
+        <span class="close">&times;</span>
+        <img class="lightbox-content" id="lightboxImg" alt="enlarged-view" />
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
