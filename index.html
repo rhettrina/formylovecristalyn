@@ -3,52 +3,326 @@
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-    <title>for my cristalyn</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>For My Love, Cristalyn ❤️</title>
+    <meta name="description"
+        content="A love letter website dedicated to Cristalyn — with memories, music, and all the reasons I love you." />
+    <meta name="theme-color" content="#ff6b8a" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet" />
+
     <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
 
-    <!-- AUDIO -->
-    <audio id="bgMusic" src="music/background.mp3"></audio>
+    <!-- ============================================ -->
+    <!-- FLOATING HEARTS (global, behind content)     -->
+    <!-- ============================================ -->
+    <div class="hearts-bg" id="heartsContainer" aria-hidden="true"></div>
 
-    <!-- HERO SECTION -->
-    <section class="hero">
-        <div class="gradient-bg"></div>
-        <div class="hearts" id="heartsContainer"></div>
-        <div class="hero-content">
-            <h1>I Love You</h1>
-            <p>so ito na yun message ko para sayo hahhaa ahmm wala lang basta palagi akong thankful sayo at sa mga
-                memories natin na pinagsamahan. I love you so much Cristalyn!
-                salamat dahil tinatanggap mo parin ako palagi.<br> <br> <span class="heart">❤️</span>
-            </p>
-            <p>Thank you for being my partner in crime, my confidant, and my greatest supporter. I cherish every moment
-                we spend together and look forward to creating even more beautiful memories with you. You are my
-                everything, and I love you more than words can express. <br> <br> <span class="heart">❤️</span></p>
-            </p>
-            <p>
-                I love you, Cristalyn! You are my everything, and I am so lucky to have you in my life. <br> <br> <span
-                    class="heart">❤️</span>
-            </p>
-            <button id="scrollDownBtn">View Our Memories</button>
+    <!-- ============================================ -->
+    <!-- NAVIGATION (minimal sticky)                  -->
+    <!-- ============================================ -->
+    <nav class="nav" id="mainNav" aria-label="Main navigation">
+        <div class="nav__inner">
+            <a href="#hero" class="nav__logo">💕 For Cristalyn</a>
+            <button class="nav__toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav__links" id="navLinks" role="list">
+                <li><a href="#love-letter">Love Letter</a></li>
+                <li><a href="#gallery">Memories</a></li>
+                <li><a href="#timeline">Timeline</a></li>
+                <li><a href="#reasons">Reasons</a></li>
+            </ul>
         </div>
-    </section>
+    </nav>
 
-    <!-- GALLERY SECTION -->
-    <section class="gallery" id="gallerySection">
-        <h2>Our Memories</h2>
-
-        <div class="photos-container" id="photosContainer">
-            <!-- Images loaded via GitHub API -->
+    <!-- ============================================ -->
+    <!-- HERO SECTION                                 -->
+    <!-- ============================================ -->
+    <header class="hero" id="hero">
+        <div class="hero__gradient" aria-hidden="true"></div>
+        <div class="hero__content">
+            <div class="glass-card hero__card">
+                <h1 class="hero__title">I Love You, Cristalyn</h1>
+                <p class="hero__subtitle">Every moment with you is a beautiful memory I treasure forever.</p>
+                <div class="hero__buttons">
+                    <button class="btn btn--primary" id="scrollDownBtn">
+                        <span>View Our Memories</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M12 5v14" />
+                            <path d="m19 12-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <button class="btn btn--secondary" id="playMusicBtn">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path d="M12 3v10.55A4 4 0 1 0 14 17V7h4V3h-6Z" />
+                        </svg>
+                        <span>Play Music</span>
+                    </button>
+                </div>
+            </div>
         </div>
-        <div class="hearts" id="heartsContainer"></div>
-    </section>
+        <div class="hero__scroll-indicator" aria-hidden="true">
+            <div class="mouse">
+                <div class="mouse__wheel"></div>
+            </div>
+        </div>
+    </header>
 
-    <!-- LIGHTBOX OVERLAY -->
-    <div class="lightbox" id="lightbox">
-        <span class="close">&times;</span>
-        <img class="lightbox-content" id="lightboxImg" alt="enlarged-view" />
+    <main>
+
+        <!-- ============================================ -->
+        <!-- LOVE LETTER SECTION                          -->
+        <!-- ============================================ -->
+        <section class="section love-letter" id="love-letter">
+            <div class="container">
+                <h2 class="section__title reveal">💌 My Love Letter</h2>
+                <div class="letter-card glass-card reveal">
+                    <div class="letter-card__decoration" aria-hidden="true">✦</div>
+                    <p>My Dearest Cristalyn,</p>
+                    <p>So ito na yun message ko para sayo hahaha… Ahmm, wala lang — basta palagi akong thankful sayo at
+                        sa mga memories natin na pinagsamahan. I love you so much, Cristalyn! Salamat dahil tinatanggap
+                        mo pa rin ako palagi. ❤️</p>
+                    <p>Thank you for being my partner in crime, my confidant, and my greatest supporter. I cherish every
+                        moment we spend together and look forward to creating even more beautiful memories with you. You
+                        are my everything, and I love you more than words can express. ❤️</p>
+                    <p>I love you, Cristalyn! You are my everything, and I am so lucky to have you in my life. ❤️</p>
+                    <p class="letter-card__signature">Forever yours,<br />— Your Love 💕</p>
+                    <div class="letter-card__decoration letter-card__decoration--bottom" aria-hidden="true">✦</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- MEMORIES GALLERY SECTION                     -->
+        <!-- ============================================ -->
+        <section class="section gallery" id="gallery">
+            <div class="container">
+                <h2 class="section__title reveal">📸 Our Memories</h2>
+                <p class="section__subtitle reveal">Every photo tells a story of us.</p>
+                <div class="gallery__grid" id="photosContainer">
+                    <!-- Images loaded via GitHub API + optional Google Drive -->
+                </div>
+                <div class="gallery__loading" id="galleryLoading">
+                    <div class="spinner"></div>
+                    <p>Loading our memories...</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- TIMELINE / HIGHLIGHTS SECTION                -->
+        <!-- ============================================ -->
+        <section class="section timeline" id="timeline">
+            <div class="container">
+                <h2 class="section__title reveal">💫 Our Timeline</h2>
+                <p class="section__subtitle reveal">The beautiful journey we've shared together.</p>
+                <div class="timeline__track">
+                    <div class="timeline__line" aria-hidden="true"></div>
+
+                    <div class="timeline__item reveal" data-side="left">
+                        <div class="timeline__dot" aria-hidden="true"></div>
+                        <div class="timeline__card glass-card">
+                            <span class="timeline__date">January 2025</span>
+                            <h3>Our First Memories Together</h3>
+                            <p>The beginning of something truly beautiful. Every smile, every laugh — captured forever
+                                in our hearts.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline__item reveal" data-side="right">
+                        <div class="timeline__dot" aria-hidden="true"></div>
+                        <div class="timeline__card glass-card">
+                            <span class="timeline__date">February 2025</span>
+                            <h3>Growing Closer</h3>
+                            <p>Every day with you felt like a gift. We shared so many special moments that made our bond
+                                even stronger.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline__item reveal" data-side="left">
+                        <div class="timeline__dot" aria-hidden="true"></div>
+                        <div class="timeline__card glass-card">
+                            <span class="timeline__date">March 2025</span>
+                            <h3>Adventures Together</h3>
+                            <p>Exploring new places, trying new things — everything is better when I'm with you.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline__item reveal" data-side="right">
+                        <div class="timeline__dot" aria-hidden="true"></div>
+                        <div class="timeline__card glass-card">
+                            <span class="timeline__date">April 2025</span>
+                            <h3>More Beautiful Memories</h3>
+                            <p>Our love keeps growing stronger with each passing day. I can't wait to see what the
+                                future holds for us.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline__item reveal" data-side="left">
+                        <div class="timeline__dot" aria-hidden="true"></div>
+                        <div class="timeline__card glass-card">
+                            <span class="timeline__date">Today & Beyond</span>
+                            <h3>Forever With You</h3>
+                            <p>This is just the beginning. I promise to love you more and more every single day. You are
+                                my forever. 💕</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- REASONS I LOVE YOU SECTION                   -->
+        <!-- ============================================ -->
+        <section class="section reasons" id="reasons">
+            <div class="container">
+                <h2 class="section__title reveal">💖 Reasons I Love You</h2>
+                <p class="section__subtitle reveal">Tap each card to reveal a reason.</p>
+                <div class="reasons__grid">
+                    <div class="reason-card reveal" tabindex="0" role="button" aria-expanded="false">
+                        <div class="reason-card__front">
+                            <span class="reason-card__number">1</span>
+                            <span class="reason-card__icon">💝</span>
+                        </div>
+                        <div class="reason-card__back">
+                            <p>Your smile lights up my entire world. Every time you smile, I fall in love all over
+                                again.</p>
+                        </div>
+                    </div>
+                    <div class="reason-card reveal" tabindex="0" role="button" aria-expanded="false">
+                        <div class="reason-card__front">
+                            <span class="reason-card__number">2</span>
+                            <span class="reason-card__icon">🥰</span>
+                        </div>
+                        <div class="reason-card__back">
+                            <p>You accept me for who I am — all my flaws, all my quirks. You love me unconditionally.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="reason-card reveal" tabindex="0" role="button" aria-expanded="false">
+                        <div class="reason-card__front">
+                            <span class="reason-card__number">3</span>
+                            <span class="reason-card__icon">✨</span>
+                        </div>
+                        <div class="reason-card__back">
+                            <p>You make ordinary moments feel extraordinary. Even doing nothing with you feels like
+                                everything.</p>
+                        </div>
+                    </div>
+                    <div class="reason-card reveal" tabindex="0" role="button" aria-expanded="false">
+                        <div class="reason-card__front">
+                            <span class="reason-card__number">4</span>
+                            <span class="reason-card__icon">💪</span>
+                        </div>
+                        <div class="reason-card__back">
+                            <p>You are my greatest supporter. You believe in me even when I don't believe in myself.</p>
+                        </div>
+                    </div>
+                    <div class="reason-card reveal" tabindex="0" role="button" aria-expanded="false">
+                        <div class="reason-card__front">
+                            <span class="reason-card__number">5</span>
+                            <span class="reason-card__icon">🤗</span>
+                        </div>
+                        <div class="reason-card__back">
+                            <p>Your hugs feel like home. No matter how tough the day, being with you makes everything
+                                better.</p>
+                        </div>
+                    </div>
+                    <div class="reason-card reveal" tabindex="0" role="button" aria-expanded="false">
+                        <div class="reason-card__front">
+                            <span class="reason-card__number">6</span>
+                            <span class="reason-card__icon">😂</span>
+                        </div>
+                        <div class="reason-card__back">
+                            <p>You make me laugh like no one else can. Our inside jokes are my favorite thing in the
+                                world.</p>
+                        </div>
+                    </div>
+                    <div class="reason-card reveal" tabindex="0" role="button" aria-expanded="false">
+                        <div class="reason-card__front">
+                            <span class="reason-card__number">7</span>
+                            <span class="reason-card__icon">🌟</span>
+                        </div>
+                        <div class="reason-card__back">
+                            <p>You inspire me to be a better person every single day. You bring out the best in me.</p>
+                        </div>
+                    </div>
+                    <div class="reason-card reveal" tabindex="0" role="button" aria-expanded="false">
+                        <div class="reason-card__front">
+                            <span class="reason-card__number">8</span>
+                            <span class="reason-card__icon">♾️</span>
+                        </div>
+                        <div class="reason-card__back">
+                            <p>Because you are my forever. I can't imagine my life without you, and I never want to. I
+                                love you, Cristalyn!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ============================================ -->
+    <!-- FOOTER                                       -->
+    <!-- ============================================ -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer__text">Made with all my love for you, Cristalyn 💕</p>
+            <p class="footer__sub">Forever & Always</p>
+        </div>
+    </footer>
+
+    <!-- ============================================ -->
+    <!-- LIGHTBOX OVERLAY                             -->
+    <!-- ============================================ -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer" hidden>
+        <div class="lightbox__overlay"></div>
+        <button class="lightbox__close" id="lightboxClose" aria-label="Close image viewer">&times;</button>
+        <button class="lightbox__arrow lightbox__arrow--prev" id="lightboxPrev" aria-label="Previous image">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="m15 18-6-6 6-6" />
+            </svg>
+        </button>
+        <button class="lightbox__arrow lightbox__arrow--next" id="lightboxNext" aria-label="Next image">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="m9 18 6-6-6-6" />
+            </svg>
+        </button>
+        <img class="lightbox__img" id="lightboxImg" alt="Enlarged memory photo" />
+        <div class="lightbox__counter" id="lightboxCounter" aria-live="polite"></div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- NOW PLAYING MINI-PLAYER DRAWER               -->
+    <!-- ============================================ -->
+    <div class="mini-player" id="miniPlayer" aria-label="Music player">
+        <button class="mini-player__toggle" id="miniPlayerToggle" aria-label="Toggle music player"
+            aria-expanded="false">
+            <span class="mini-player__toggle-icon">🎵</span>
+            <span class="mini-player__toggle-text">Now Playing</span>
+            <svg class="mini-player__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m18 15-6-6-6 6" />
+            </svg>
+        </button>
+        <div class="mini-player__content" id="miniPlayerContent">
+            <div class="mini-player__embed" id="miniPlayerEmbed">
+                <!-- Spotify / YouTube embed inserted by JS -->
+            </div>
+        </div>
     </div>
 
     <script src="script.js"></script>
